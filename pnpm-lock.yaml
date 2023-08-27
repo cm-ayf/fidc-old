@@ -1,6 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@cloudflare/workers-types': ^4.20230821.0
   '@playwright/test': ^1.28.1
   '@sveltejs/adapter-cloudflare': ^2.3.3
   '@sveltejs/kit': ^1.20.4
@@ -10,6 +11,7 @@ specifiers:
   eslint-config-prettier: ^8.5.0
   eslint-plugin-svelte: ^2.30.0
   lint-staged: ^14.0.1
+  lizod: ^0.2.6
   prettier: ^2.8.0
   prettier-plugin-svelte: ^2.10.1
   simple-git-hooks: ^2.9.0
@@ -21,6 +23,7 @@ specifiers:
   vitest: ^0.32.2
 
 devDependencies:
+  '@cloudflare/workers-types': 4.20230821.0
   '@playwright/test': 1.37.1
   '@sveltejs/adapter-cloudflare': 2.3.3_@sveltejs+kit@1.23.0
   '@sveltejs/kit': 1.23.0_svelte@4.2.0+vite@4.4.9
@@ -30,6 +33,7 @@ devDependencies:
   eslint-config-prettier: 8.10.0_eslint@8.48.0
   eslint-plugin-svelte: 2.33.0_eslint@8.48.0+svelte@4.2.0
   lint-staged: 14.0.1
+  lizod: 0.2.6_typescript@5.2.2
   prettier: 2.8.8
   prettier-plugin-svelte: 2.10.1_6txzok57cptboxg2qp7a6vrhly
   simple-git-hooks: 2.9.0
@@ -1526,6 +1530,14 @@ packages:
       log-update: 5.0.1
       rfdc: 1.3.0
       wrap-ansi: 8.1.0
+    dev: true
+
+  /lizod/0.2.6_typescript@5.2.2:
+    resolution: {integrity: sha512-HZKxn0eyMsjEl4hX3A4p9ASWaDECSad/YJUdZja2+sTj2ZY5fXXaW2MTsHghub8JjB5XbyQSnI2YLUIXJloGfA==}
+    peerDependencies:
+      typescript: '>=5'
+    dependencies:
+      typescript: 5.2.2
     dev: true
 
   /local-pkg/0.4.3:
