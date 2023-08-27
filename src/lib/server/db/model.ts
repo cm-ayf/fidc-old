@@ -24,7 +24,7 @@ export default class Model<T extends object, V extends Validator<T>> {
     if (id) await this.delete(id);
   }
 
-  async put(id: string, value: T, expirationTtl: number): Promise<void> {
+  async put(id: string, value: T, expirationTtl?: number): Promise<void> {
     if (!this.validator(value)) throw new Error("Invalid value");
     const grantId =
       "grant_id" in value && typeof value.grant_id === "string"

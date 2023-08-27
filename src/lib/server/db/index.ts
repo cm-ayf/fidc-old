@@ -11,3 +11,5 @@ export default class DB implements IDB {
 
   constructor(public kv: KVNamespace) {}
 }
+
+export type { User } from "./models/user";

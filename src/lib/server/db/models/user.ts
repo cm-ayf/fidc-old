@@ -1,4 +1,4 @@
-import { $object, $string, $boolean } from "lizod";
+import { $object, $string, $boolean, type Infer } from "lizod";
 
 export const user = $object({
   sub: $string,
@@ -6,3 +6,5 @@ export const user = $object({
   email: $string,
   email_verified: $boolean,
 });
+
+export type User = Infer<typeof user>;
