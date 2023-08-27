@@ -30,6 +30,7 @@ export default function wellKnown({ mode }: { mode: string }): Plugin {
 function openidConfiguration(issuer: URL) {
   return {
     issuer,
+    registration_endpoint: new URL("/register", issuer),
     authorization_endpoint: new URL("/authorize", issuer),
     token_endpoint: new URL("/token", issuer),
     userinfo_endpoint: new URL("/userinfo", issuer),
@@ -45,6 +46,8 @@ function openidConfiguration(issuer: URL) {
       "code token id_token",
       "none",
     ],
+    response_modes_supported: ["query", "fragment"],
+    grant_types_supported: ["authorization_code", "refresh_token", "implicit"],
     subject_types_supported: ["public"],
     id_token_signing_alg_values_supported: ["ES256"],
     scopes_supported: ["openid", "profile", "email"],
@@ -60,7 +63,6 @@ function openidConfiguration(issuer: URL) {
       "sub",
     ],
     code_challenge_methods_supported: ["S256"],
-    grant_types_supported: ["authorization_code", "refresh_token"],
   };
 }
 
