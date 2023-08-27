@@ -1,4 +1,3 @@
-import type { JWK } from "jose";
 import { loadEnv, type Plugin } from "vite";
 
 export default function wellKnown({ mode }: { mode: string }): Plugin {
@@ -6,7 +5,7 @@ export default function wellKnown({ mode }: { mode: string }): Plugin {
     process.env,
     loadEnv(mode, process.cwd(), "")
   );
-  const privateJwk: JWK = JSON.parse(PRIVATE_JWK);
+  const privateJwk = JSON.parse(PRIVATE_JWK);
   const { d: _, ...publicJwk } = privateJwk;
 
   return {
@@ -65,6 +64,6 @@ function openidConfiguration(issuer: URL) {
   };
 }
 
-function jwksJson(publicJwk: JWK) {
+function jwksJson(publicJwk: unknown) {
   return { keys: [publicJwk] };
 }
