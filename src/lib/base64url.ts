@@ -1,5 +1,5 @@
 export function atob(str: string) {
-  return global.atob(
+  return globalThis.atob(
     str
       .replace(/-/g, "+")
       .replace(/_/g, "/")
@@ -8,7 +8,7 @@ export function atob(str: string) {
 }
 
 export function btoa(str: string) {
-  return global
+  return globalThis
     .btoa(str)
     .replace(/\+/g, "-")
     .replace(/\//g, "_")
