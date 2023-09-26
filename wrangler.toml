@@ -1,0 +1,5 @@
+[[d1_databases]]
+binding = "DB"
+database_name = "fidc"
+database_id = "1c189b9d-ea22-4ab0-b3db-6721fa238053"
+migrations_dir = ".wrangler/migrations"
