@@ -15,4 +15,17 @@ model User {
   name           String
   email          String  @unique
   email_verified Boolean
+
+  authenticator Authenticator[]
+}
+
+model Authenticator {
+  id Bytes @id
+
+  user User   @relation(fields: [sub], references: [sub])
+  sub  String
+
+  publicKey Bytes @map("public_key")
+
+  @@index([sub])
 }
