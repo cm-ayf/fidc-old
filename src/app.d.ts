@@ -4,7 +4,10 @@ import type { KVNamespace } from "@cloudflare/workers-types";
 // for information about these interfaces
 declare global {
   namespace App {
-    // interface Error {}
+    interface Error {
+      status: "failed";
+      errorMessage: string;
+    }
     // interface Locals {}
     // interface PageData {}
     interface Platform {

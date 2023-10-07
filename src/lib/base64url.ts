@@ -14,3 +14,11 @@ export function btoa(str: string) {
     .replace(/\//g, "_")
     .replace(/=/g, "");
 }
+
+export function base64urlToBuffer(str: string) {
+  return Uint8Array.from(atob(str), (c) => c.charCodeAt(0)).buffer;
+}
+
+export function bufferToBase64url(buffer: ArrayBuffer) {
+  return btoa(String.fromCharCode(...new Uint8Array(buffer)));
+}
